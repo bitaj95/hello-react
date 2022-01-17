@@ -15,15 +15,19 @@ const Button = (props) => {
 const Application = () => {
 
   const reset = () => {
-    console.log("reset");
-    // your code here
-  };
+    setName(name = "");
+  }
   
-  const [name, setName] = useState("Bita");
+  const [name, setName] = useState("");
 
 
   return (
     <main>
+      <input 
+        value={name}
+        onChange={ (event) => setName(event.target.value)}
+        placeholder="Type Your Name"
+        />
       <Button reset={reset} buttonText="Reset" />
       <h1>Hello {name} </h1>
     </main>
